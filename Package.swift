@@ -4,9 +4,9 @@ import PackageDescription
 let package = Package(
     name: "SwiftCppPlayground",
     platforms: [
-        .iOS(.v13),    // Define platform versions if needed
+        .iOS(.v13), // Define platform versions if needed
         .tvOS(.v13),
-        .macOS(.v11)
+        .macOS(.v11),
     ],
     products: [
         .library(
@@ -20,14 +20,18 @@ let package = Package(
     targets: [
         .target(
             name: "CppPrinter",
-            path: "CppPrinter"
+            path: "CppPrinter",
+            publicHeadersPath: "include", // Path to the public headers
+            cxxSettings: [
+                .headerSearchPath("include"), // Ensure the header search path is correct
+            ]
         ),
         .target(
             name: "SwiftPrinter",
             dependencies: ["CppPrinter"],
             path: "SwiftPrinter",
             swiftSettings: [
-                .interoperabilityMode(.Cxx)  // C++ interoperability setting
+                .interoperabilityMode(.Cxx), // C++ interoperability setting
             ]
         ),
     ]

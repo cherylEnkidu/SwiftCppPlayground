@@ -8,6 +8,6 @@
 #include <string>
 
 class Printer {
-public:
-    Printer(std::string content);
+ public:
+  Printer(std::string content);
 };

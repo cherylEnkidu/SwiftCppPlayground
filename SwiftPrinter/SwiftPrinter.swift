@@ -7,8 +7,8 @@
 
 import CppPrinter
 
-public struct SwiftPrinter {
-    public static func print(_ value : String) {
+public enum SwiftPrinter {
+    public static func print(_ value: String) {
         // Print the value if applicable.
         _ = Printer(std.string(value))
     }
