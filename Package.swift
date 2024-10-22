@@ -23,7 +23,7 @@ let package = Package(
             path: "CppPrinter",
             publicHeadersPath: "include", // Path to the public headers
             cxxSettings: [
-                .headerSearchPath("include"), // Ensure the header search path is correct
+                .headerSearchPath(""), // Ensure the header search path is correct
             ]
         ),
         .target(
